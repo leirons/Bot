@@ -14,6 +14,7 @@ git clone https://github.com/leirons/MailBot.git
 pip3 install -r requirements.txt
 
 create .env file  and enter there
+
 TOKEN
 
 EMAIL_HOST
@@ -28,7 +29,11 @@ EMAIL_USE_TLS default is True
 
 Then run redis server and tasks with two commands:
 
+
 celery -A mailbot worker -l INFO --pool = solo
+
 celery -A mailbot beat -l INFO 
 
-and run tg bot with command python manage.py run_pooling
+and run tg bot with command 
+
+python manage.py run_pooling
