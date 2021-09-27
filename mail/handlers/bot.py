@@ -4,6 +4,8 @@ from aiogram import (
 )
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
+from mailbot.settings import TOKEN
+
 from .handlers import send_email_in_the_future,process_message,process_subject,process_email,\
     SendMailForm,SendMailFormInTheFuture,send_email,process_email2,process_message2,process_subject2,process_date,\
     create_temp_mail,process_email_name,CreateTempMail,process_email_domain,choose_messages_from_temp_mail,\
@@ -35,7 +37,7 @@ def register_handlers(dp):
 def run_pooling():
     """Run bot in pooling mod"""
     print("Bot started")
-    bot = Bot(token='1848337311:AAEwV7k_B2p01wdxT9CDFTtiUn0B1GfeM9Y')
+    bot = Bot(token=TOKEN)
     storage = MemoryStorage()
     dp = register_handlers(dp=Dispatcher(bot,storage=storage))
     executor.start_polling(dispatcher=dp,skip_updates=True)
