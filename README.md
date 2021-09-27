@@ -29,7 +29,9 @@ EMAIL_PORT
 
 EMAIL_USE_TLS default is True
 
-Then run redis server and tasks with two commands:
+Then run redis server and tasks with two commands: 
+
+Before run redis check the settings in maibot.
 
 ```
 celery -A mailbot worker -l INFO --pool = solo
